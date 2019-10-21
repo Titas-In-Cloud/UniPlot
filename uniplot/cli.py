@@ -3,7 +3,7 @@ import argparse
 from . import parse
 from . import analysis
 
-LOC="uniprot_receptor.xml.gz"
+LOC = "uniprot_receptor.xml.gz"
 
 def dump(args):
     for record in parse.uniprot_seqrecords(LOC):
@@ -12,10 +12,6 @@ def dump(args):
 def name_list(args):
     for record in parse.uniprot_seqrecords(LOC):
         print(record.name)
-
-def length_test(args):
-    for record in parse.uniprot_seqrecords(LOC):
-        print(len(record))
 
 def proteins_average_lenght(args):
     print("Average Length is {}".format(analysis.average_len(parse.uniprot_seqrecords(LOC))))

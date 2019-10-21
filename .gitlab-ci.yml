@@ -7,4 +7,5 @@ before_script:
 
 build:
   script:
+    - pipenv install pytest
     - pipenv run pytest -W ignore

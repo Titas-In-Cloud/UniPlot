@@ -8,4 +8,3 @@ def plot_bar_show(d):
     plt.tight_layout()
     plt.title('Average Protein Length of Organisms')
     plt.show()
-

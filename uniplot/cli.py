@@ -22,6 +22,10 @@ def bar_plot_average_by_taxa(args):
     av = analysis.average_len_taxa(parse.uniprot_seqrecords(LOC))
     plot.plot_bar_show(av)
 
+def pie_plot_average_by_taxa(args):
+    av = analysis.average_len_taxa(parse.uniprot_seqrecords(LOC))
+    plot.plot_pie_show(av)
+
 def cli():
     parser = argparse.ArgumentParser(prog="uniplot")
 
@@ -31,6 +35,7 @@ def cli():
     subparsers.add_parser("list").set_defaults(func=name_list)
     subparsers.add_parser("average").set_defaults(func=proteins_average_lenght)
     subparsers.add_parser("bar_average-by-taxa").set_defaults(func=bar_plot_average_by_taxa)
+    subparsers.add_parser("pie_average-by-taxa").set_defaults(func=pie_plot_average_by_taxa)
 
     args = parser.parse_args()
 

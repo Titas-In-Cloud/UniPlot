@@ -27,15 +27,25 @@ def pie_plot_average_by_taxa(args):
     plot.plot_pie_show(av)
 
 def cli():
-    parser = argparse.ArgumentParser(prog="uniplot")
+    parser = argparse.ArgumentParser(prog = "uniplot", usage = '%(prog)s [options]')
 
-    subparsers = parser.add_subparsers(help="Sub Command Help")
+    subparsers = parser.add_subparsers(help = "Sub Command Help")
 
     subparsers.add_parser("dump").set_defaults(func=dump)
     subparsers.add_parser("list").set_defaults(func=name_list)
     subparsers.add_parser("average").set_defaults(func=proteins_average_lenght)
     subparsers.add_parser("bar_average-by-taxa").set_defaults(func=bar_plot_average_by_taxa)
     subparsers.add_parser("pie_average-by-taxa").set_defaults(func=pie_plot_average_by_taxa)
+
+    parser.add_argument('--dump', help = 'gives a list with all the information about proteins '
+                                         '- protein sequence, ID, name, lenght, description and other '
+                                         'related data')
+    parser.add_argument('--list', help = 'gives a list with only the lenghts of proteins')
+    parser.add_argument('--average', help = 'gives average lenght of all proteins')
+    parser.add_argument('--bar_average-by-taxa', help = 'gives average lenght of proteins categorized '
+                                                        'by type in a form of a bar chart')
+    parser.add_argument('--pie_average-by-taxa', help = 'gives average lenght of proteins categorized '
+                                                        'by type in a form of a pie chart')
 
     args = parser.parse_args()
 

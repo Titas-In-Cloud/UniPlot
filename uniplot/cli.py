@@ -1,5 +1,4 @@
 import argparse
-import os.path
 from os import path
 from uniplot import plot
 

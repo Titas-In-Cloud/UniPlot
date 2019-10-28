@@ -24,11 +24,16 @@ in ```Terminal```.
 ## Usage
 There are a couple of ways to display the protein sequence information from
 **Uniprot** file. Run code below in ```Terminal``` to get:
- 1. Average lenght of proteins by type diplayed in bar chart - ```pipenv run python uniplot.py bar_average-by-taxa```
- 2. Average lenght of proteins by type displayed in pie chart - ```pipenv run python uniplot.py pie_average-by-taxa```
+ 1. Average lenght of proteins by type diplayed in bar chart - 
+ ```pipenv run python uniplot.py bar_average-by-taxa```
+ 2. Average lenght of proteins by type displayed in pie chart - 
+ ```pipenv run python uniplot.py pie_average-by-taxa```
  3. Average lenght of proteins - ```pipenv run python uniplot.py average```
  4. Information list about proteins - ```pipenv run python uniplot.py dump```
  5. Protein lenght list - ```pipenv run python uniplot.py list```
+
+To set the location of file from which the data will be read write code below in terminal:
+```pipenv run python uniplot.py file_location```
 ## License
 This project is licensed under the MIT License - see the **LICENSE.md** file for
 details.

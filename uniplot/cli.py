@@ -4,8 +4,16 @@ from uniplot import plot
 from . import parse
 from . import analysis
 
-LOC = "uniprot_receptor.xml.gz"
-POC = "./resources/uniprot_sprot_small.xml.gz"
+file = open("location.txt", "r")
+LOC = file.read()
+file.close()
+
+def file_location_configuration(args):
+    """Allows to set the location from where to get the data file"""
+    file = open("location.txt", "r+")
+    location = input("What file would you like to use? Please write the location: ")
+    file.write(location)
+    file.close()
 
 def dump(args):
     """Prints a list with all the information about proteins"""
@@ -37,12 +45,15 @@ def cli():
 
     subparsers = parser.add_subparsers(help = "Sub Command Help")
 
+    subparsers.add_parser("file_location").set_defaults(func = file_location_configuration)
     subparsers.add_parser("dump").set_defaults(func = dump)
     subparsers.add_parser("list").set_defaults(func = name_list)
     subparsers.add_parser("average").set_defaults(func = proteins_average_lenght)
     subparsers.add_parser("bar_average-by-taxa").set_defaults(func = bar_plot_average_by_taxa)
     subparsers.add_parser("pie_average-by-taxa").set_defaults(func = pie_plot_average_by_taxa)
 
+    parser.add_argument('--file_location', help = 'allows the user to set the location of the file'
+                                                  'that he wants to use')
     parser.add_argument('--dump', help = 'gives a list with all the information about proteins '
                                          '- protein sequence, ID, name, lenght, description and other '
                                          'related data')

@@ -1,8 +1,3 @@
-from . import parse
-
-LOC = "uniprot_receptor.xml.gz"
-POC = "./resources/uniprot_sprot_small.xml.gz"
-
 def average_len(records):
     """Returns the average length for records"""
     protein_amount = 0

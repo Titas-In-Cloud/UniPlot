@@ -1,6 +1,7 @@
 import matplotlib.pyplot as plt
 
 def plot_bar_show(d, fontsize = 14):
+    """Configures and gives average length bar chart of proteins"""
     r = range(0, len(d))
     plt.figure()
     plt.bar(r, d.values())
@@ -10,6 +11,7 @@ def plot_bar_show(d, fontsize = 14):
     plt.show()
 
 def plot_pie_show(d, fontsize = 14):
+    """Configures and gives average length pie chart of proteins"""
     plt.figure()
     sizes = d.values()
 

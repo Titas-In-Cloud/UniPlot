@@ -11,6 +11,7 @@ file.close()
 
 def file_location_configuration(args):
     """Allows to set the location from where to get the data file"""
+    open("location.txt", "w").close()
     file = open("location.txt", "r+")
     location = input("What file would you like to use? Please write the location: ")
 

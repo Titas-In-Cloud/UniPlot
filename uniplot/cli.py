@@ -1,4 +1,6 @@
 import argparse
+import os.path
+from os import path
 from uniplot import plot
 
 from . import parse
@@ -12,7 +14,13 @@ def file_location_configuration(args):
     """Allows to set the location from where to get the data file"""
     file = open("location.txt", "r+")
     location = input("What file would you like to use? Please write the location: ")
-    file.write(location)
+
+    if path.exists(location):
+        file.write(location)
+        print("Success! File location was scanned.")
+    else:
+        print("Error! File does not exist.")
+
     file.close()
 
 def dump(args):

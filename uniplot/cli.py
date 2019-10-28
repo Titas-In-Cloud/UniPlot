@@ -38,12 +38,12 @@ def proteins_average_lenght(args):
 
 def bar_plot_average_by_taxa(args):
     """Gives bar chart with the average length of top level taxa proteins"""
-    av = analysis.average_len_taxa(parse.uniprot_seqrecords(LOC))
+    av = analysis.average_len_taxa(parse.uniprot_seqrecords(LOC), depth = ())
     plot.plot_bar_show(av)
 
 def pie_plot_average_by_taxa(args):
     """Gives pie chart with the average length of top level taxa proteins"""
-    av = analysis.average_len_taxa(parse.uniprot_seqrecords(LOC))
+    av = analysis.average_len_taxa(parse.uniprot_seqrecords(LOC), depth = ())
     plot.plot_pie_show(av)
 
 def cli():
